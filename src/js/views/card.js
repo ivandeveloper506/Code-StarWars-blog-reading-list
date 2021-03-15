@@ -15,8 +15,8 @@ import "../../styles/index.scss";
 export default function Card(props) {
 	return (
 		<div className="d-flex">
-			<div className="card text-center mainCard flex-fill">
-				<img src={props.imageUrl} alt={props.alt} width="100%" height="240px" />
+			<div className="card text-center mainCard flex-fill border-0">
+				<img className="cardImage" src={props.imageUrl} alt={props.alt} width="100%" height="240px" />
 				<div className="card-body">
 					<h5 className="card-title">{props.title}</h5>
 					<p className="card-text">{props.description}</p>

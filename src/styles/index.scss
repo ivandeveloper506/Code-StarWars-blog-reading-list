@@ -6,3 +6,25 @@ body{
     width: 100vw;
     height: 100vw;
 }
+
+.cardMain{
+    border-radius: 5px;
+}
+
+.cardImage{
+   border-radius: 5px 5px 0px 0px;    
+}
+
+.card-body{
+    background: rgb(40,39,39);
+    color: white;
+}
+
+.card-footer{
+    background: rgb(78, 77, 77);
+}
+
+.navbarClass{
+    background: rgb(65, 62, 62);
+    color: white;
+}

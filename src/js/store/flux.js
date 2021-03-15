@@ -1,4 +1,6 @@
 const getState = ({ getStore, getActions, setStore }) => {
+	const baseUrl = "https://www.swapi.tech/api/";
+
 	return {
 		store: {
 			demo: [
@@ -16,6 +18,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
+			loadPlanets: async () => {
+				const url = baseUrl + "/planets";
+				const response = await fetch(url);
+				const data = await response.json();
+				setStore({ planets: data.results });
+			},
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
