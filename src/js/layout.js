@@ -22,7 +22,7 @@ const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Switch>
-						{/* <Route exact path="/detail-card">
+						{/* <Route exact path="/detailCharacter">
 							<DetailCard />
 						</Route> */}
 						<Route exact path="/single/:theid">

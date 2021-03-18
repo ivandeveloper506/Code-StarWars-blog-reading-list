@@ -20,7 +20,7 @@ export default function Card(props) {
 				<div className="card-body">
 					<h5 className="card-title">{props.title}</h5>
 					<p className="card-text text-left m-0">
-						Gender:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						Gender:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						{props.gender}
 					</p>
 					<p className="card-text text-left m-0">
@@ -35,17 +35,17 @@ export default function Card(props) {
 				<div className="card-footer">
 					<small className="text-muted">
 						<div className="d-flex justify-content-between">
-							<div className="col">
-								{/* <Link to="/detail-card">
+							<div className="col m-0 p-0">
+								{/* <Link to="/detailCharacter">
 									<button type="button" className="btn btn-outline-primary">
 										Learn More!
 									</button>
 								</Link> */}
 								<button type="button" className="btn btn-outline-primary">
-									Learn More!
+									{props.buttonLabel}
 								</button>
 							</div>
-							<div className="col">
+							<div className="col m-0 p-0">
 								<button type="button" className="btn btn-outline-warning">
 									♥
 								</button>

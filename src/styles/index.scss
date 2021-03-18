@@ -1,11 +1,9 @@
-// body{
-//     background-image: url('.././img/star-wars-bg.jpg');
-//     background-position: center;
-//     background-size: cover;
-//     background-repeat: no-repeat;
-//     width: 100vw;
-//     height: 100vw;
-// }
+body{
+    background-image: url('.././img/star-wars-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+}
 
 .topCardClass{
     margin: 100px;
@@ -20,12 +18,12 @@
 }
 
 .card-body{
-    background: rgb(40,39,39);
+    background: rgba(40,39,39, 0.6);
     color: white;
 }
 
 .card-footer{
-    background: rgb(78, 77, 77);
+    background: rgba(255,255,255, 0.6);
 }
 
 .navbarClass{
