@@ -1,8 +1,8 @@
 const getState = ({ getStore, getActions, setStore }) => {
-	const baseUrl = "https://www.swapi.tech/api/";
-
 	return {
 		store: {
+			peoples: [],
+			planets: [],
 			demo: [
 				{
 					title: "FIRST",
@@ -17,9 +17,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 			]
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
+			loadPeoples: async () => {
+				const url = "https://swapi.dev/api/people/";
+				const response = await fetch(url);
+				const data = await response.json();
+				setStore({ peoples: data.results });
+			},
 			loadPlanets: async () => {
-				const url = baseUrl + "/planets";
+				const url = "https://swapi.dev/api/planets/";
 				const response = await fetch(url);
 				const data = await response.json();
 				setStore({ planets: data.results });

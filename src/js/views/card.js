@@ -19,17 +19,31 @@ export default function Card(props) {
 				<img className="cardImage" src={props.imageUrl} alt={props.alt} width="100%" height="240px" />
 				<div className="card-body">
 					<h5 className="card-title">{props.title}</h5>
-					<p className="card-text">{props.description}</p>
+					<p className="card-text text-left m-0">
+						Gender:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						{props.gender}
+					</p>
+					<p className="card-text text-left m-0">
+						Hair Color:&nbsp;&nbsp;
+						{props.hairColor}
+					</p>
+					<p className="card-text text-left m-0">
+						Eye Color:&nbsp;&nbsp;&nbsp;
+						{props.eyeColor}
+					</p>
 				</div>
 				<div className="card-footer">
 					<small className="text-muted">
 						<div className="d-flex justify-content-between">
 							<div className="col">
-								<Link to="/card-detail">
+								{/* <Link to="/detail-card">
 									<button type="button" className="btn btn-outline-primary">
 										Learn More!
 									</button>
-								</Link>
+								</Link> */}
+								<button type="button" className="btn btn-outline-primary">
+									Learn More!
+								</button>
 							</div>
 							<div className="col">
 								<button type="button" className="btn btn-outline-warning">
@@ -47,7 +61,9 @@ export default function Card(props) {
 Card.propTypes = {
 	alt: PropType.string,
 	title: PropType.string,
-	description: PropType.string,
+	gender: PropType.string,
+	hairColor: PropType.string,
+	eyeColor: PropType.string,
 	buttonUrl: PropType.string,
 	buttonLabel: PropType.string,
 	imageUrl: PropType.string
