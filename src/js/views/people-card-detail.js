@@ -82,6 +82,9 @@ export default function PeopleCardDetail() {
 										</div>
 									</div>
 								</div>
+								{/* LISTA */}
+
+								{/* LISTA */}
 							</div>
 						);
 					}

@@ -9,7 +9,7 @@ export const Navbar = () => {
 	return (
 		<nav className="navbar navbar-light mb-3 fixed-top navbarClass">
 			<Link to="/">
-				<span className="navbar-brand logo-class text-white mb-0 h1">Star Wars</span>
+				<span className="navbar-brand logo-class text-white mb-0 h1">Star Wars Blog</span>
 			</Link>
 
 			<Link to="/show-people-card">
