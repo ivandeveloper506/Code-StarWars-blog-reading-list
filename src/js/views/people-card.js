@@ -7,14 +7,34 @@
 /*                  de acuerdo a los valores de las [props].                    */
 /********************************************************************************/
 
-import React from "react";
+import React, { useState, useContext } from "react";
+import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import PropType from "prop-types";
 import "../../styles/index.scss";
 
 export default function PeopleCard(props) {
-	console.log("*** props in card ***");
-	console.log(props);
+	const { store, actions } = useContext(Context);
+	const [favorites, setFavorites] = useState(store.favorites);
+
+	const addFavorite = () => {
+		let newFavorite;
+
+		newFavorite = store.peoples.filter(item => item.name == props.title);
+
+		newFavorite = newFavorite[0];
+
+		let newArray = favorites;
+
+		newArray.push(newFavorite);
+
+		setFavorites(newArray);
+
+		actions.addFavorites(favorites);
+
+		console.log("*** store.favorites ***");
+		console.log(store.favorites);
+	};
 
 	return (
 		<div className="d-flex">
@@ -46,7 +66,7 @@ export default function PeopleCard(props) {
 								</Link>
 							</div>
 							<div className="col m-0 p-0">
-								<button type="button" className="btn btn-outline-warning">
+								<button type="button" className="btn btn-outline-warning" onClick={() => addFavorite()}>
 									♥
 								</button>
 							</div>

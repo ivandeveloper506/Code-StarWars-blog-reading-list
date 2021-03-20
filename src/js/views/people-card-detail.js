@@ -40,11 +40,6 @@ export default function PeopleCardDetail() {
 												<div className="col-lg-8">
 													<div className="card-body card-body-detail pl-5">
 														<h2 className="card-title text-center">{item.name}</h2>
-														{/* <p className="card-text">
-															This is a wider card with supporting text below as a natural
-															lead-in to additional content. This content is a little bit
-															longer.
-														</p> */}
 														<p className="card-text text-left m-0">
 															Gender:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 															{item.gender.charAt(0).toUpperCase() + item.gender.slice(1)}

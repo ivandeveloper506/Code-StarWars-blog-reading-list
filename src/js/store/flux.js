@@ -3,6 +3,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			peoples: [],
 			planets: [],
+			favorites: [],
 			demo: [
 				{
 					title: "FIRST",
@@ -36,6 +37,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
+			},
+			addFavorites: param => {
+				setStore({ favorites: param });
 			},
 			changeColor: (index, color) => {
 				//get the store
