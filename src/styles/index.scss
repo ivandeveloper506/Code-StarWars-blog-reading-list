@@ -2,7 +2,6 @@ body{
     background-image: url('.././img/star-wars-bg.jpg');
     background-position: center;
     background-size: cover;
-    width: 100vw;
 }
 
 .topCardClass{
@@ -29,4 +28,20 @@ body{
 .navbarClass{
     background: rgb(65, 62, 62);
     color: white;
+}
+
+.card-image-detail{
+   border-radius: 5px 0px 0px 5px;
+   height: 300px;
+//    width: 300px;
+}
+
+.card-body-detail{
+    height: 300px;
+     border-radius: 0px 5px 5px 0px;
+     margin-left: 70px;
+}
+
+.card-button-back{
+    margin: 20px 80px 0px 80px;
 }

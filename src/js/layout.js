@@ -3,7 +3,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
-import { DetailCard } from "./views/detail-card";
+import ShowPeopleCard from "./views/show-people-card";
+import PeopleCardDetail from "./views/people-card-detail";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
@@ -22,18 +23,18 @@ const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Switch>
-						{/* <Route exact path="/detailCharacter">
-							<DetailCard />
-						</Route> */}
+						<Route exact path="/show-people-card">
+							<ShowPeopleCard />
+						</Route>
+						<Route exact path="/people-card-detail/:id">
+							<PeopleCardDetail />
+						</Route>
 						<Route exact path="/single/:theid">
 							<Single />
 						</Route>
 						<Route exact path="/">
 							<Home />
 						</Route>
-						{/* <Route>
-							<h1>Not found!</h1>
-						</Route> */}
 						<Route path="*">
 							<h1>404 Not found!</h1>
 						</Route>

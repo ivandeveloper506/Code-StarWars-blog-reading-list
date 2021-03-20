@@ -10,10 +10,10 @@ import React, { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import "../../styles/index.scss";
 import { Context } from "../store/appContext";
-import Card from "./card.js";
-import CardImage from "../../img/people-bg.jpg";
+import PeopleCard from "./people-card.js";
+import PeopleCardImage from "../../img/people-card-image.jpg";
 
-export default function CharacterCard() {
+export default function ShowPeopleCard() {
 	const { store, actions } = useContext(Context);
 
 	console.log(store.peoples);
@@ -26,8 +26,9 @@ export default function CharacterCard() {
 					{store.peoples.map((item, index) => {
 						return (
 							<div key={index} className="col-lg-4 mb-5">
-								<Card
+								<PeopleCard
 									key={index}
+									cardId={index}
 									alt={item.name}
 									title={item.name}
 									gender={item.gender.charAt(0).toUpperCase() + item.gender.slice(1)}
@@ -35,7 +36,7 @@ export default function CharacterCard() {
 									eyeColor={item.eye_color.charAt(0).toUpperCase() + item.eye_color.slice(1)}
 									buttonUrl="#"
 									buttonLabel="Learn More!"
-									imageUrl={CardImage}
+									imageUrl={PeopleCardImage}
 								/>
 							</div>
 						);

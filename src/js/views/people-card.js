@@ -12,13 +12,16 @@ import { Link } from "react-router-dom";
 import PropType from "prop-types";
 import "../../styles/index.scss";
 
-export default function Card(props) {
+export default function PeopleCard(props) {
+	console.log("*** props in card ***");
+	console.log(props);
+
 	return (
 		<div className="d-flex">
 			<div className="card text-center mainCard flex-fill border-0">
 				<img className="cardImage" src={props.imageUrl} alt={props.alt} width="100%" height="240px" />
 				<div className="card-body">
-					<h5 className="card-title">{props.title}</h5>
+					<h3 className="card-title">{props.title}</h3>
 					<p className="card-text text-left m-0">
 						Gender:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						{props.gender}
@@ -36,14 +39,11 @@ export default function Card(props) {
 					<small className="text-muted">
 						<div className="d-flex justify-content-between">
 							<div className="col m-0 p-0">
-								{/* <Link to="/detailCharacter">
+								<Link to={"/people-card-detail/" + props.cardId}>
 									<button type="button" className="btn btn-outline-primary">
-										Learn More!
+										{props.buttonLabel}
 									</button>
-								</Link> */}
-								<button type="button" className="btn btn-outline-primary">
-									{props.buttonLabel}
-								</button>
+								</Link>
 							</div>
 							<div className="col m-0 p-0">
 								<button type="button" className="btn btn-outline-warning">
@@ -58,7 +58,8 @@ export default function Card(props) {
 	);
 }
 
-Card.propTypes = {
+PeopleCard.propTypes = {
+	cardId: PropType.number,
 	alt: PropType.string,
 	title: PropType.string,
 	gender: PropType.string,

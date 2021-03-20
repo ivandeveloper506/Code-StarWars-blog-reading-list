@@ -1,5 +1,5 @@
 import React from "react";
-import CharacterCard from "./character-card.js";
+import ShowPeopleCard from "./show-people-card";
 import "../../styles/home.scss";
 
-export const Home = () => <CharacterCard />;
+export const Home = () => <ShowPeopleCard />;
