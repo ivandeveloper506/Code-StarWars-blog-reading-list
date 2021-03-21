@@ -5,6 +5,8 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home";
 import ShowPeopleCard from "./views/show-people-card";
 import PeopleCardDetail from "./views/people-card-detail";
+import ShowPlanetCard from "./views/show-planet-card";
+import PlanetCardDetail from "./views/planet-card-detail";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
@@ -28,6 +30,12 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/people-card-detail/:id">
 							<PeopleCardDetail />
+						</Route>
+						<Route exact path="/show-planet-card">
+							<ShowPlanetCard />
+						</Route>
+						<Route exact path="/planet-card-detail/:id">
+							<PlanetCardDetail />
 						</Route>
 						<Route exact path="/single/:theid">
 							<Single />
