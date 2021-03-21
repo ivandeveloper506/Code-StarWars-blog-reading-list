@@ -19,16 +19,32 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 			loadPeoples: async () => {
-				const url = "https://swapi.dev/api/people/";
-				const response = await fetch(url);
-				const data = await response.json();
-				setStore({ peoples: data.results });
+				let localStoragePeoples = localStorage.getItem("peoplesAPI");
+
+				if (localStoragePeoples === null || localStoragePeoples === undefined) {
+					const url = "https://swapi.dev/api/people/";
+					const response = await fetch(url);
+					const data = await response.json();
+					setStore({ peoples: data.results });
+
+					localStorage.setItem("peoplesAPI", JSON.stringify(data.results));
+				} else {
+					setStore({ peoples: JSON.parse(localStoragePeoples) });
+				}
 			},
 			loadPlanets: async () => {
-				const url = "https://swapi.dev/api/planets/";
-				const response = await fetch(url);
-				const data = await response.json();
-				setStore({ planets: data.results });
+				let localStoragePlanets = localStorage.getItem("planetsAPI");
+
+				if (localStoragePlanets === null || localStoragePlanets === undefined) {
+					const url = "https://swapi.dev/api/planets/";
+					const response = await fetch(url);
+					const data = await response.json();
+					setStore({ planets: data.results });
+
+					localStorage.setItem("planetsAPI", JSON.stringify(data.results));
+				} else {
+					setStore({ planets: JSON.parse(localStoragePlanets) });
+				}
 			},
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");

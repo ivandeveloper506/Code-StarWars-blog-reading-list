@@ -16,8 +16,6 @@ import PeopleCardImage from "../../img/people-card-image.jpg";
 export default function ShowPeopleCard() {
 	const { store, actions } = useContext(Context);
 
-	console.log(store.peoples);
-
 	return (
 		<div>
 			<div className="container topCardClass" />

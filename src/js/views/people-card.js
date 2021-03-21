@@ -32,8 +32,8 @@ export default function PeopleCard(props) {
 
 		actions.addFavorites(favorites);
 
-		console.log("*** store.favorites ***");
-		console.log(store.favorites);
+		console.log("*** favorites ***");
+		console.log(favorites);
 	};
 
 	return (
