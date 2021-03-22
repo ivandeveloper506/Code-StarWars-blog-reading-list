@@ -13,14 +13,14 @@ import { Link } from "react-router-dom";
 import PropType from "prop-types";
 import "../../styles/index.scss";
 
-export default function PlanetCard(props) {
+export default function VehicleCard(props) {
 	const { store, actions } = useContext(Context);
 	const [favorites, setFavorites] = useState(store.favorites);
 
 	const addFavorite = () => {
 		let newFavorite;
 
-		newFavorite = store.planets.filter(item => item.name == props.name);
+		newFavorite = store.vehicles.filter(item => item.name == props.name);
 
 		newFavorite = newFavorite[0];
 
@@ -41,22 +41,22 @@ export default function PlanetCard(props) {
 			<div className="card text-center mainCard flex-fill border-0">
 				<img className="cardImage" src={props.imageUrl} alt={props.alt} width="100%" height="240px" />
 				<div className="card-body">
-					<h3 className="card-title">{props.name}</h3>
+					<h4 className="card-title">{props.name}</h4>
 					<p className="card-text text-left m-0">
-						Terrain:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						{props.terrain}
+						Model:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						{props.model}
 					</p>
 					<p className="card-text text-left m-0">
-						Climate:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						{props.climate}
+						Vehicle Class:&nbsp;&nbsp;
+						{props.vehicle_class}
 					</p>
-					<p className="card-text text-left m-0">Population:&nbsp; {props.population}</p>
+					<p className="card-text text-left m-0">Passengers:&nbsp;&nbsp;&nbsp;&nbsp; {props.passengers}</p>
 				</div>
 				<div className="card-footer">
 					<small className="text-muted">
 						<div className="d-flex justify-content-between">
 							<div className="col m-0 p-0">
-								<Link to={"/planet-card-detail/" + props.cardId}>
+								<Link to={"/vehicle-card-detail/" + props.cardId}>
 									<button type="button" className="btn btn-outline-primary">
 										{props.buttonLabel}
 									</button>
@@ -75,13 +75,13 @@ export default function PlanetCard(props) {
 	);
 }
 
-PlanetCard.propTypes = {
+VehicleCard.propTypes = {
 	cardId: PropType.number,
 	alt: PropType.string,
 	name: PropType.string,
-	terrain: PropType.string,
-	climate: PropType.string,
-	population: PropType.string,
+	model: PropType.string,
+	vehicle_class: PropType.string,
+	passengers: PropType.string,
 	buttonUrl: PropType.string,
 	buttonLabel: PropType.string,
 	imageUrl: PropType.string

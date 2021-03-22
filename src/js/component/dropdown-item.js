@@ -52,7 +52,9 @@ export default function DropdownItem() {
 							<div key={index}>
 								<Dropdown.Item eventKey={index} className="dropdown-item-class">
 									<div className="row">
-										<div className="col-10">{item.name}</div>
+										<div className="col-10" onClick={() => deleteFavorite(item.name)}>
+											{item.name}
+										</div>
 										<div className="col-2">
 											<i className="fas fa-trash" onClick={() => deleteFavorite(item.name)} />
 										</div>

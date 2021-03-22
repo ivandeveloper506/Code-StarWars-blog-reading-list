@@ -7,11 +7,9 @@ import DropdownItem from "./dropdown-item";
 export const Navbar = () => {
 	return (
 		<nav className="navbar navbar-light mb-3 fixed-top navbarClass">
-			<NavLink exact to="/">
-				<span className="navbar-brand logo-class text-white mb-0 h1" activeClassName="active">
-					Star Wars Blog
-				</span>
-			</NavLink>
+			<Link exact to="/">
+				<span className="navbar-brand logo-class text-white mb-0 h1">Star Wars Blog</span>
+			</Link>
 
 			<NavLink exact to="/show-people-card">
 				<span className="navbar-brand text-white ml-3 mb-0 h1" activeClassName="active">
@@ -23,7 +21,7 @@ export const Navbar = () => {
 					Planets
 				</span>
 			</NavLink>
-			<NavLink exact to="/show-people-card2">
+			<NavLink exact to="/show-vehicle-card">
 				<span className="navbar-brand text-white ml-3 mb-0 h1" activeClassName="active">
 					Vehicles
 				</span>

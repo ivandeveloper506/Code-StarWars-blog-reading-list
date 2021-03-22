@@ -7,7 +7,9 @@ import ShowPeopleCard from "./views/show-people-card";
 import PeopleCardDetail from "./views/people-card-detail";
 import ShowPlanetCard from "./views/show-planet-card";
 import PlanetCardDetail from "./views/planet-card-detail";
-import { Single } from "./views/single";
+import ShowVehicleCard from "./views/show-vehicle-card";
+import VehicleCardDetail from "./views/vehicle-card-detail";
+import NotFoundPage from "./component/not-found-page";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -25,27 +27,14 @@ const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Switch>
-						<Route exact path="/show-people-card">
-							<ShowPeopleCard />
-						</Route>
-						<Route exact path="/people-card-detail/:id">
-							<PeopleCardDetail />
-						</Route>
-						<Route exact path="/show-planet-card">
-							<ShowPlanetCard />
-						</Route>
-						<Route exact path="/planet-card-detail/:id">
-							<PlanetCardDetail />
-						</Route>
-						<Route exact path="/single/:theid">
-							<Single />
-						</Route>
-						<Route exact path="/">
-							<Home />
-						</Route>
-						<Route path="*">
-							<h1>404 Not found!</h1>
-						</Route>
+						<Route exact path="/" component={Home} />
+						<Route exact path="/show-people-card" component={ShowPeopleCard} />
+						<Route exact path="/people-card-detail/:id" component={PeopleCardDetail} />
+						<Route exact path="/show-planet-card" component={ShowPlanetCard} />
+						<Route exact path="/planet-card-detail/:id" component={PlanetCardDetail} />
+						<Route exact path="/show-vehicle-card" component={ShowVehicleCard} />
+						<Route exact path="/vehicle-card-detail/:id" component={VehicleCardDetail} />
+						<Route exact path="*" component={NotFoundPage} />
 					</Switch>
 					<Footer />
 				</ScrollToTop>

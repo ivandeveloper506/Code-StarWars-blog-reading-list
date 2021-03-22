@@ -3,6 +3,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			peoples: [],
 			planets: [],
+			vehicles: [],
 			favorites: [],
 			demo: [
 				{
@@ -44,6 +45,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 					localStorage.setItem("planetsAPI", JSON.stringify(data.results));
 				} else {
 					setStore({ planets: JSON.parse(localStoragePlanets) });
+				}
+			},
+			loadVehicles: async () => {
+				let localStorageVehicles = localStorage.getItem("vehiclesAPI");
+
+				if (localStorageVehicles === null || localStorageVehicles === undefined) {
+					const url = "https://swapi.dev/api/vehicles/";
+					const response = await fetch(url);
+					const data = await response.json();
+					setStore({ vehicles: data.results });
+
+					localStorage.setItem("vehiclesAPI", JSON.stringify(data.results));
+				} else {
+					setStore({ vehicles: JSON.parse(localStorageVehicles) });
 				}
 			},
 			exampleFunction: () => {
