@@ -59,7 +59,7 @@ export default function PeopleCard(props) {
 					<small className="text-muted">
 						<div className="d-flex justify-content-between">
 							<div className="col m-0 p-0">
-								<Link to={"/people-card-detail/" + props.cardId}>
+								<Link to={`${props.buttonUrl}${props.cardId}`}>
 									<button type="button" className="btn btn-outline-primary">
 										{props.buttonLabel}
 									</button>

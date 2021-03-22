@@ -50,13 +50,14 @@ export default function PlanetCard(props) {
 						Climate:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						{props.climate}
 					</p>
-					<p className="card-text text-left m-0">Population:&nbsp; {props.population}</p>
+					<p className="card-text text-left m-0">Population:&nbsp;&nbsp; {props.population}</p>
 				</div>
 				<div className="card-footer">
 					<small className="text-muted">
 						<div className="d-flex justify-content-between">
 							<div className="col m-0 p-0">
-								<Link to={"/planet-card-detail/" + props.cardId}>
+								{/* <Link to={"/planet-card-detail/" + props.cardId}> */}
+								<Link to={`${props.buttonUrl}${props.cardId}`}>
 									<button type="button" className="btn btn-outline-primary">
 										{props.buttonLabel}
 									</button>

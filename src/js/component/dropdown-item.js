@@ -44,7 +44,7 @@ export default function DropdownItem() {
 				store.favorites.length === null ||
 				store.favorites.length === undefined ? (
 					<Dropdown.Item eventKey={0} className="dropdown-item-class">
-						{"(Vacia)"}
+						{"(Empty)"}
 					</Dropdown.Item>
 				) : (
 					store.favorites.map((item, index) => {

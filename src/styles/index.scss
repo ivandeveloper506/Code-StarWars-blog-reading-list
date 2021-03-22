@@ -58,11 +58,6 @@ body{
     color: red;
 }
 
-.active{
-    background: gray;
-    border-radius: 5px;
-}
-
 .not-found-page-text-class{
     color: white;
     font-size: 75px;
@@ -73,4 +68,10 @@ body{
     display: flex;
     background-image: url('.././img/not-found-page.jpg');
     background-position: center;
+}
+
+.active{
+    background-color: gold;
+    font-weight: bold;
+    border-radius: 5px;
 }
