@@ -6,7 +6,7 @@
 /*                  dibuja y renderiza el DOM, mostrando las cuatro cartas.     */
 /********************************************************************************/
 
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import "../../styles/index.scss";
 import { Context } from "../store/appContext";
@@ -16,12 +16,18 @@ import VehicleCardImage from "../../img/vehicle-card-image.jpg";
 export default function ShowVehicleCard() {
 	const { store, actions } = useContext(Context);
 	const [searchVehicle, setSearchVehicle] = useState("");
+	const inputRef = useRef(null);
+
+	useEffect(() => {
+		inputRef.current.focus();
+	}, []);
 
 	return (
 		<div>
 			<div className="container topCardClass" />
 			<div className="container mt-3">
 				<input
+					ref={inputRef}
 					onChange={event => {
 						setSearchVehicle(event.target.value);
 					}}
