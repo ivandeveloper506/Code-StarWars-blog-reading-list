@@ -1,10 +1,8 @@
 /********************************************************************************/
-/* Fecha Creación:  12 Marzo 2021.                                            */
+/* Fecha Creación:  23 Marzo 2021.                                              */
 /* Autor:           Iván Fonseca Castro                                         */
 /*                                                                              */
-/* Descripción:     Archivo principal de componente Card, el componente es      */
-/*                  generico y se puede invocar con propiedas [props] y dibujar */
-/*                  de acuerdo a los valores de las [props].                    */
+/* Descripción:     Componente principal para renderizar las opciones del Menú. */
 /********************************************************************************/
 
 import React, { useContext } from "react";

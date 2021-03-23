@@ -1,3 +1,10 @@
+/********************************************************************************/
+/* Fecha Creación:  23 Marzo 2021.                                              */
+/* Autor:           Iván Fonseca Castro                                         */
+/*                                                                              */
+/* Descripción:     Componente principal para renderizar el Pie de Página.      */
+/********************************************************************************/
+
 import React, { Component } from "react";
 
 export const Footer = () => (

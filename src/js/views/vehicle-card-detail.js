@@ -1,10 +1,13 @@
 /********************************************************************************/
-/* Fecha Creación:  12 Marzo 2021.                                            */
+/* Fecha Creación:  23 Marzo 2021.                                              */
 /* Autor:           Iván Fonseca Castro                                         */
 /*                                                                              */
-/* Descripción:     Archivo principal de componente Card, el componente es      */
-/*                  generico y se puede invocar con propiedas [props] y dibujar */
-/*                  de acuerdo a los valores de las [props].                    */
+/* Descripción:     Vista principal del detalle del componente Card, el         */
+/*                  componente es generico y se puede invocar con el valor del  */
+/*                  ID de la Card y dibujar el detalle de acuerdo a los valores */
+/*                  del objeto de Vehicles.                                     */
+/*                  El componente permite renderizar los componentes de detalle */
+/*                  para las Cards de Vehicles.                                 */
 /********************************************************************************/
 
 import React, { useContext } from "react";

@@ -1,6 +1,12 @@
+/********************************************************************************/
+/* Fecha Creación:  23 Marzo 2021.                                              */
+/* Autor:           Iván Fonseca Castro                                         */
+/*                                                                              */
+/* Descripción:     Archivo principal para definición de rutas de la aplicación.*/
+/********************************************************************************/
+
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
 import ShowPeopleCard from "./views/show-people-card";
@@ -23,20 +29,18 @@ const Layout = () => {
 	return (
 		<div className="d-flex flex-column">
 			<BrowserRouter basename={basename}>
-				<ScrollToTop>
-					<Navbar />
-					<Switch>
-						<Route exact path="/" component={Home} />
-						<Route exact path="/show-people-card" component={ShowPeopleCard} />
-						<Route exact path="/people-card-detail/:id" component={PeopleCardDetail} />
-						<Route exact path="/show-planet-card" component={ShowPlanetCard} />
-						<Route exact path="/planet-card-detail/:id" component={PlanetCardDetail} />
-						<Route exact path="/show-vehicle-card" component={ShowVehicleCard} />
-						<Route exact path="/vehicle-card-detail/:id" component={VehicleCardDetail} />
-						<Route exact path="*" component={NotFoundPage} />
-					</Switch>
-					<Footer />
-				</ScrollToTop>
+				<Navbar />
+				<Switch>
+					<Route exact path="/" component={Home} />
+					<Route exact path="/show-people-card" component={ShowPeopleCard} />
+					<Route exact path="/people-card-detail/:id" component={PeopleCardDetail} />
+					<Route exact path="/show-planet-card" component={ShowPlanetCard} />
+					<Route exact path="/planet-card-detail/:id" component={PlanetCardDetail} />
+					<Route exact path="/show-vehicle-card" component={ShowVehicleCard} />
+					<Route exact path="/vehicle-card-detail/:id" component={VehicleCardDetail} />
+					<Route exact path="*" component={NotFoundPage} />
+				</Switch>
+				<Footer />
 			</BrowserRouter>
 		</div>
 	);

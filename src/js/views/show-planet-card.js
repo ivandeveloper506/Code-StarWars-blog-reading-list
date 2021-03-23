@@ -1,9 +1,9 @@
 /********************************************************************************/
-/* Fecha Creación:  25 Febrero 2021.                                            */
+/* Fecha Creación:  23 Marzo 2021.                                              */
 /* Autor:           Iván Fonseca Castro                                         */
 /*                                                                              */
-/* Descripción:     Archivo principal de componente CardInfo. Este componente   */
-/*                  dibuja y renderiza el DOM, mostrando las cuatro cartas.     */
+/* Descripción:     Vista principal que permite renderizar todas las Cards      */
+/*                  del objeto Planets.                                         */
 /********************************************************************************/
 
 import React, { useContext, useState, useRef, useEffect } from "react";
