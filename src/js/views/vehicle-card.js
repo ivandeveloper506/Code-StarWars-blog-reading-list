@@ -7,7 +7,7 @@
 /*                  de acuerdo a los valores de las [props].                    */
 /********************************************************************************/
 
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import PropType from "prop-types";
@@ -15,25 +15,9 @@ import "../../styles/index.scss";
 
 export default function VehicleCard(props) {
 	const { store, actions } = useContext(Context);
-	const [favorites, setFavorites] = useState(store.favorites);
 
 	const addFavorite = () => {
-		let newFavorite;
-
-		newFavorite = store.vehicles.filter(item => item.name == props.name);
-
-		newFavorite = newFavorite[0];
-
-		let newArray = favorites;
-
-		newArray.push(newFavorite);
-
-		setFavorites(newArray);
-
-		actions.addFavorites(favorites);
-
-		console.log("*** favorites ***");
-		console.log(favorites);
+		actions.addFavorite(store.vehicles.filter(item => item.name == props.name));
 	};
 
 	return (

@@ -15,25 +15,9 @@ import "../../styles/index.scss";
 
 export default function PlanetCard(props) {
 	const { store, actions } = useContext(Context);
-	const [favorites, setFavorites] = useState(store.favorites);
 
 	const addFavorite = () => {
-		let newFavorite;
-
-		newFavorite = store.planets.filter(item => item.name == props.name);
-
-		newFavorite = newFavorite[0];
-
-		let newArray = favorites;
-
-		newArray.push(newFavorite);
-
-		setFavorites(newArray);
-
-		actions.addFavorites(favorites);
-
-		console.log("*** favorites ***");
-		console.log(favorites);
+		actions.addFavorite(store.planets.filter(item => item.name == props.name));
 	};
 
 	return (

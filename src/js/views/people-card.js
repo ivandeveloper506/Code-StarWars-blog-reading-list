@@ -15,25 +15,9 @@ import "../../styles/index.scss";
 
 export default function PeopleCard(props) {
 	const { store, actions } = useContext(Context);
-	const [favorites, setFavorites] = useState(store.favorites);
 
 	const addFavorite = () => {
-		let newFavorite;
-
-		newFavorite = store.peoples.filter(item => item.name == props.title);
-
-		newFavorite = newFavorite[0];
-
-		let newArray = favorites;
-
-		newArray.push(newFavorite);
-
-		setFavorites(newArray);
-
-		actions.addFavorites(favorites);
-
-		console.log("*** favorites ***");
-		console.log(favorites);
+		actions.addFavorite(store.peoples.filter(item => item.name == props.title));
 	};
 
 	return (

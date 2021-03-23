@@ -61,6 +61,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setStore({ vehicles: JSON.parse(localStorageVehicles) });
 				}
 			},
+			addFavorite: favoriteParam => {
+				const store = getStore();
+				let newFavorite = store.favorites;
+
+				favoriteParam = favoriteParam[0];
+				newFavorite.push(favoriteParam);
+
+				setStore({ favorites: newFavorite });
+			},
+			deleteFavorite: favoriteParam => {
+				setStore({ favorites: favoriteParam });
+			},
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
@@ -68,9 +80,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
-			},
-			addFavorites: param => {
-				setStore({ favorites: param });
 			},
 			changeColor: (index, color) => {
 				//get the store

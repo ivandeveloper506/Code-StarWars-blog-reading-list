@@ -7,7 +7,7 @@
 /*                  de acuerdo a los valores de las [props].                    */
 /********************************************************************************/
 
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { DropdownButton } from "react-bootstrap";
 import { Dropdown } from "react-bootstrap";
@@ -16,19 +16,9 @@ import { ButtonGroup } from "react-bootstrap";
 
 export default function DropdownItem() {
 	const { store, actions } = useContext(Context);
-	const [favorites, setFavorites] = useState([]);
 
 	const deleteFavorite = deleteItem => {
-		const deleteFavorite = store.favorites.filter(item => item.name !== deleteItem);
-
-		setFavorites(deleteFavorite);
-
-		actions.addFavorites(deleteFavorite);
-
-		console.log("*** store.favorites ***");
-		console.log(store.favorites);
-		console.log("*** deleteFavorite***");
-		console.log(deleteFavorite);
+		actions.deleteFavorite(store.favorites.filter(item => item.name !== deleteItem));
 	};
 
 	return (
