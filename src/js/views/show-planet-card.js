@@ -7,7 +7,7 @@
 /********************************************************************************/
 
 import React, { useContext, useState, useRef, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../../styles/index.scss";
 import { Context } from "../store/appContext";
 import PlanetCard from "./planet-card.js";

@@ -8,7 +8,7 @@
 /********************************************************************************/
 
 import React, { useContext } from "react";
-import { Link, useParams, useHistory } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import VehicleCardImageDetail from "../../img/vehicle-card-image-detail.jpg";
 import "../../styles/index.scss";

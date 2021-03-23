@@ -11,7 +11,6 @@ import ShowVehicleCard from "./views/show-vehicle-card";
 import VehicleCardDetail from "./views/vehicle-card-detail";
 import NotFoundPage from "./component/not-found-page";
 import injectContext from "./store/appContext";
-
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
