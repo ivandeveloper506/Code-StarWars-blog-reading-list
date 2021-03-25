@@ -38,7 +38,7 @@ export default function ShowVehicleCard() {
 					name="SearchVehicle"
 					id="SearchVehicle"
 				/>
-				<div className="row d-flex justify-content-center mt-3">
+				<div className="row d-flex-row flex-nowrap overflow-auto mt-3">
 					{store.vehicles
 						.filter(value => {
 							if (searchVehicle === "") {

@@ -38,7 +38,7 @@ export default function ShowPeopleCard() {
 					name="SearchPeople"
 					id="SearchPeople"
 				/>
-				<div className="row d-flex justify-content-center mt-3">
+				<div className="row d-flex-row flex-nowrap overflow-auto mt-3">
 					{store.peoples
 						.filter(value => {
 							if (searchPeople === "") {
